@@ -46,15 +46,7 @@ using namespace std;
 // #define EPS 1e-9
 // int min(int a,int b){return a>b?b:a;}
 // int max(int a,int b){return a>b?a:b;}
-int min(int n1,int n2,int n3){
-    if(n1<n2 && n1 < n3){
-        return n1;
-    }else if(n2<n1 && n2<n3){
-        return n2;
-    }else{
-        return n3;
-    }
-}
+
 int main()
 {
     FAST;
@@ -65,20 +57,7 @@ int main()
     WRITE;
 #endif
     
-    int t;
-    cin>>t;
-    for(inti=0;i<t;i++){
-        int n,k;
-        cin>>n>>k;
-        if(k>n || k<=0){
-            cout<<"-1"<<endl;
-        }
-        else{
-
-        }
-
-
-    }
+    return 0;
 }
 
 
