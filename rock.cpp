@@ -2,51 +2,118 @@
 // PDEU (INDIA)
 // A-65 to Z-90  & a-97 to z-122 diffrence a(97)-32 = A(65)
 #include <bits/stdc++.h>
-#include<cstring>
+#include<numeric>
 #include <time.h>
+
 using namespace std;
 
-// #define ll long long
-// #define ld long double
-// #define pb push_back
+#define ll long long
+#define ld long double
+typedef unsigned long long ull;
+#define pb push_back
 // #define mp make_pair
-// #define ff first
-// #define ss second
+#define ff first
+#define ss second
 // #define BG begin()
 // #define EN end()
 
 // #define VLL vector<ll>
 // #define PLL pair<ll,ll>
-// #define V(x) vector<x>
-// #define P(x,y) pair<x,y>
-// #define ALL(x) (x).BG,(x).EN
-// #define SZ(x) int(x.size())
-// #define LEN(x) int(x.length())
+#define V(x) vector<x>
+#define P(x,y) pair<x,y>
 
-// #define FOR(i,a,b) for(ll i=a;i<b;i++)
-// #define RFOR(i,a,b) for(ll i=(ll)b-1;i>=a;i--)
+#define rep(i,a,b) for(ll i=a;i<b;i++)
+// #define RFOR(i,a,b) for(int i=b;i>a;i--)
 // #define FILL(a,b) memset((a),(b),sizeof((a)))
 // #define precision(x,d) cout<<fixed<<setprecision(d)<<x
 // #define minQueue priority_queue<ll,vector<ll>,greater<ll> > 
 // #define maxQueue priority_queue<ll,vector<ll>,less<ll> > 
-
-
+#define all(x)  (x).begin(),(x).end()
+#define sz(a) (int) a.size( )
 
 #define FAST ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
 // #define FLUSH cout.flush();
 #define READ freopen("input.txt","r",stdin);
 #define WRITE freopen("output.txt","w",stdout);
+#define ERR freopen("error.txt","w",stderr);
 // #define RANDOM srand(time(NULL));
-// #define TIME ((double)clock())/CLOCKS_PER_SEC
-
 // #define MOD 1000000007
 // #define NAX 1000005
 // #define INF LONG_LONG_MAX
 // #define MINF LONG_LONG_MIN
 // #define EPS 1e-9
-// int min(int a,int b){return a>b?b:a;}
-// int max(int a,int b){return a>b?a:b;}
 
+#ifndef ONLINE_JUDGE
+#define deb(x) cerr << #x <<" "; _print(x); cerr << endl;
+#else
+#define deb(x)
+#endif
+
+void _print(ll t) {cerr << t;}
+void _print(int t) {cerr << t;}
+void _print(string t) {cerr << t;}
+void _print(char t) {cerr << t;}
+void _print(ld t) {cerr << t;}
+void _print(double t) {cerr << t;}
+void _print(ull t) {cerr << t;}
+
+template <class T, class V> void _print(pair <T, V> p);
+template <class T> void _print(vector <T> v);
+template <class T> void _print(set <T> v);
+template <class T, class V> void _print(map <T, V> v);
+template <class T> void _print(multiset <T> v);
+template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.ff); cerr << ","; _print(p.ss); cerr << "}";}
+template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
+
+// function to get all the subsequences of the string s
+// void getAllSubSequences(string& s, vector<string>& sub,vector<int>& lastChar, int currentSize, int maxSize){
+//     if(currentSize > maxSize) return;
+    
+//     int i = sub.size()-1;
+    
+//     if(currentSize == 1){
+//         for(int i =0; i < maxSize; i++){
+//             string toPush = "";
+//             toPush += s[i];
+//             sub.push_back(toPush);
+//             lastChar.push_back(i);
+//         }
+//         getAllSubSequences(s, sub, lastChar, currentSize+1, maxSize);
+//         return;     
+//     }
+ 
+//     while(sub[i].size() == currentSize-1){
+//         for(int j = lastChar[i]+1; j < maxSize; j++){
+//             string next = sub[i];
+//             next += s[j];
+//             sub.push_back(next);
+//             lastChar.push_back(j);
+//         }
+//         i--;
+//     }
+//     getAllSubSequences(s,sub,lastChar,currentSize+1,maxSize);
+// }
+
+void solve(){
+    //USE rep for implementing loop
+    unsigned ll n,k;
+    cin >> n >> k;
+    unsigned ll ar[n];
+    rep(i,0,n){
+        cin >> ar[i];
+    }
+    unsigned ll x= 0;
+    unsigned ll pos = x % n;
+    while(k--){
+        x += ar[pos];
+        pos = x % n;
+    }
+    cout << x<<"\n";
+
+}
 int main()
 {
     FAST;
@@ -55,12 +122,18 @@ int main()
     READ;
     // for writing output to output.txt
     WRITE;
+    //for writing error to output.txt
+    ERR;
 #endif
     
-    return 0;
+    int t;
+    // cin>>t;
+    t=1;
+    while(t--){
+        solve();
+   
+    }
 }
-
-
 
 
 
